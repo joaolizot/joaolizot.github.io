@@ -1,0 +1,57 @@
+html{
+    background-image: url('https://images.unsplash.com/photo-1603736029103-dafad0eb0906?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80');
+    background-size: cover;
+}
+body{
+    margin-bottom: 50%;
+}
+.cuadroDeTexto1{
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.cuadroDeTexto2{
+    display: flex;
+     justify-content: center;
+     align-items: center;
+    
+   }
+
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(50, 50, 50, 0.547);
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+#div1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(212, 255, 0, 0.547);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+}
+
+.div2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; 
+    background-color: rgba(0, 0, 0, 0.544);
+}
+
+#boton {
+    padding: 10px 20px;
+    background-color: rgba(212, 255, 0, 0.547);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+#boton:hover {
+    background-color: #e6ff04;
+  }
+
