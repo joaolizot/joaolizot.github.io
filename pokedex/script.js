@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nombrePokemonInput = document.getElementById('nombre-pokemon');
     const detallesPokemonContainer = document.getElementById('detalles-pokemon');
     const limpiarBusquedaButton = document.getElementById('limpiar-busqueda');
+    
+    nombrePokemonInput.focus();
 
     buscador.addEventListener('submit', async (e) => {
         e.preventDefault();
