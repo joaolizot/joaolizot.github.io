@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    background-image: url(https://images.unsplash.com/photo-1613771404721-1f92d799e49f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80);
+    background-size: cover;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+#container {
+    width: 400px;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column; /* Establece la dirección de flexión vertical */
+    align-items: center; /* Centra horizontalmente en el contenedor */
+    background-color: #f0f0f07d;
+}
+
+img{
+    width: 50%;
+}
+
+h1{
+    text-decoration: underline #ffffff;;
+    
+}
+
+ p{
+    background-color: rgba(85, 0, 108, 0.567);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+
+ }
+
+ p1{
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+
+ }
+ 
+ input{
+    margin-bottom: 20px;
+ }
+
+ .atari-button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.atari-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.atari-input {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #000000;
+    color: #fffdfd;
+    border: 2px solid #000000;
+    padding: 10px;
+    width: 270px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+
+.atari-input::placeholder {
+    color: #ffffff77;
+}
+
+.atari-input:focus {
+    outline: none;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+ 
+}
