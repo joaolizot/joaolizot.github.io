@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             limpiarBusquedaButton.style.display = 'block';
             buscador.style.display = 'none';
         } catch (error) {
-            detallesPokemonContainer.innerHTML = `<p1>No se encontró el Pokémon.</p1>`;
+            detallesPokemonContainer.innerHTML = `<p1>Pokémon not found.</p1>`;
         }
     });
 
