@@ -7,7 +7,6 @@ const nextButton = document.getElementById('nextPage');
 const buscado = localStorage.setItem('buscado', false)
 
     
-    busqueda.style.display ="block";
     clear.style.display = "none";
     previousButton.style.display = "none";
     nextButton.style.display = "none";
@@ -91,7 +90,6 @@ busqueda.addEventListener('click', () => {
     previousButton.style.display = "inline-block";
       nextButton.style.display = "inline-block"
       clear.style.display = "block";
-      busqueda.style.display ="none";
 }
 );
 busquedaInput.addEventListener('keypress', function(event) {
