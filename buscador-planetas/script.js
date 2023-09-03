@@ -3,8 +3,7 @@ const container = document.getElementById('container');
 const busqueda = document.getElementById('buttonBusqueda');
 const clear = document.getElementById('clearBusqueda');
 const previousButton = document.getElementById('previousPage');
-const nextButton = document.getElementById('nextPage');
-const buscado = localStorage.setItem('buscado', false)
+const nextButton = document.getElementById('nextPage');;
 
     
     clear.style.display = "none";
@@ -90,6 +89,7 @@ busqueda.addEventListener('click', () => {
     previousButton.style.display = "inline-block";
       nextButton.style.display = "inline-block"
       clear.style.display = "block";
+      
 }
 );
 busquedaInput.addEventListener('keypress', function(event) {
