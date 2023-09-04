@@ -6,7 +6,6 @@
     <link rel="icon" href="Tocadiscos.png" type="image/png">
 </head>
 <body>
-    <h1>Buscador de Música</h1>
     <div id="input-container">
         <input type="text" class="form-control" id="searchInput" placeholder="Buscar canción, artista o álbum" onkeydown="if (event.key === 'Enter') searchMusic()">
         <div id="botones" style="display: flex; justify-content: space-between; align-items: center;">
@@ -14,26 +13,29 @@
             <button id="limpiar" onclick="clearResults()">Limpiar</button>
         </div>
     </div>
-    <div id="results"></div>
+    <div id="results" tabindex="0"></div>
     <script>
         const searchInput = document.getElementById('searchInput');
         const resultsContainer = document.getElementById('results');
         const buscar = document.getElementById('buscar');
         const limpiar = document.getElementById('limpiar');
-        const h1 = document.querySelector('h1');
         let timeout;
+        searchInput.focus();
         
         limpiar.style.display = 'none';
         resultsContainer.style.display = 'none';
-        h1.style.display = 'block';
 
         const clientId = '84dc6ab9a90e4e669efa5b8e94642f22';
         const clientSecret = 'baabd3f4c07645b1938bc7850f04a418';
 
         function searchMusic() {
-            const searchText = searchInput.value;
+            const searchText = searchInput.value.toLowerCase();
             
-            h1.style.display = 'none';
+            buscar.style.display = 'none';
+            searchInput.style.display = 'none';
+            limpiar.style.display = 'none';
+            searchInput.value = '';
+            
             
             // Dividir la consulta en palabras
             const searchWords = searchText.split(' ');
@@ -74,7 +76,9 @@
                         filteredTracks.forEach(track => {
                             resultsContainer.innerHTML += `
                                 <div class="song-container">
+                                    <a id="spotifyLink" href="${track.external_urls.spotify}" target="_blank">
                                     <img src="${track.album.images[0].url}" alt="Portada del Álbum">
+                                    </a>
                                     <p><u>Nombre</u>: ${track.name}</p>
                                     <p><u>Artista</u>: ${track.artists[0].name}</p>
                                     <p><u>Álbum</u>: ${track.album.name}</p>
@@ -91,7 +95,9 @@
                     limpiar.style.display = 'block';
                     resultsContainer.style.display = 'block';
                     resultsContainer.style.display = 'flex';
-                    h1.style.display = 'none';
+                    buscar.style.display = 'block';
+                    searchInput.style.display = 'block';
+                    resultsContainer.focus();
                     
                 })
                 .catch(error => {
@@ -108,7 +114,6 @@
             resultsContainer.innerHTML = '';
             searchInput.value = '';
             limpiar.style.display = 'none'
-            h1.style.display = 'block';
         }
     </script>
     <style>
@@ -169,7 +174,7 @@
         }
 
         .song-container {
-            width: calc(30% - 20px);
+            width: calc(25% - 20px);
             border: 1px solid #ccc;
             padding: 10px;
             margin: 10px;
@@ -179,19 +184,14 @@
             border-radius: 5px;
             transition: transform 0.3s ease-in-out;
             cursor: pointer;
+            box-sizing: border-box
         }
 
         .song-container:hover {
             transform: translateY(-5px);
         }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            padding: 7px;
-            border-radius: 2px;
-            background-color: rgba(255, 255, 255, 0.721);
-        }
+        
+        
 
         h2 {
             font-size: 18px;
@@ -205,10 +205,13 @@
         }
 
         img {
-            max-width: 200px;
-            max-height: 200px;
+            width: calc(80% - 20px);
             display: block;
             margin: 20px auto;
+        }
+
+        img:hover{
+            transform: translateY(-5px);
         }
 
         audio {
@@ -219,7 +222,7 @@
             text-align: center;
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 268px) {
             /* Estilos para pantallas con un ancho máximo de 768px (tamaño de dispositivos móviles) */
             body {
                 background-size: cover;
