@@ -1,96 +1,115 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Buscador de Música</title>
+    <link rel="icon" href="Tocadiscos.png" type="image/png">
 </head>
 <body>
     <h1>Buscador de Música</h1>
-    <input type="text" id="searchInput" placeholder="Buscar canción, artista o album">
+    <div id="input-container">
+        <input type="text" class="form-control" id="searchInput" placeholder="Buscar canción, artista o álbum" onkeydown="if (event.key === 'Enter') searchMusic()">
+        <div id="botones" style="display: flex; justify-content: space-between; align-items: center;">
+            <button id="buscar" onclick="searchMusic()">Buscar</button>
+            <button id="limpiar" onclick="clearResults()">Limpiar</button>
+        </div>
+    </div>
     <div id="results"></div>
     <script>
         const searchInput = document.getElementById('searchInput');
         const resultsContainer = document.getElementById('results');
+        const buscar = document.getElementById('buscar');
+        const limpiar = document.getElementById('limpiar');
+        const h1 = document.querySelector('h1');
         let timeout;
-        resultsContainer.style.display =  'none';
+        
+        limpiar.style.display = 'none';
+        resultsContainer.style.display = 'none';
+        h1.style.display = 'block';
 
         const clientId = '84dc6ab9a90e4e669efa5b8e94642f22';
         const clientSecret = 'baabd3f4c07645b1938bc7850f04a418';
 
-        searchInput.addEventListener('input', function() {
-            clearTimeout(timeout); // Limpiar el temporizador anterior
+        function searchMusic() {
+            const searchText = searchInput.value;
             
-            // Establecer un temporizador para retrasar la búsqueda después de que se deje de escribir
-            timeout = setTimeout(function() {
-                const searchText = searchInput.value;
+            h1.style.display = 'none';
+            
+            // Dividir la consulta en palabras
+            const searchWords = searchText.split(' ');
 
-                resultsContainer.style.display =  'block';
-                resultsContainer.style.display =  'flex';
+            // Realiza una solicitud para obtener un token de acceso de Spotify
+            fetch('https://accounts.spotify.com/api/token', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'grant_type=client_credentials'
+            })
+            .then(response => response.json())
+            .then(data => {
+                const accessToken = data.access_token;
 
-                // Dividir la consulta en palabras
-                const searchWords = searchText.split(' ');
-
-                // Realiza una solicitud para obtener un token de acceso de Spotify
-                fetch('https://accounts.spotify.com/api/token', {
-                    method: 'POST',
+                // Utiliza el token de acceso para buscar canciones en Spotify
+                fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(searchText)}&type=track`, {
                     headers: {
-                        'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: 'grant_type=client_credentials'
+                        'Authorization': 'Bearer ' + accessToken
+                    }
                 })
                 .then(response => response.json())
                 .then(data => {
-                    const accessToken = data.access_token;
+                    // Verifica si se encontraron resultados de canciones
+                    if (data.tracks && data.tracks.items.length > 0) {
+                        const filteredTracks = data.tracks.items.filter(track => {
+                            // Comprueba si todas las palabras de búsqueda están en el nombre de la canción, el nombre del artista o el nombre del álbum
+                            return searchWords.every(word =>
+                                track.name.toLowerCase().includes(word.toLowerCase()) ||
+                                track.artists[0].name.toLowerCase().includes(word.toLowerCase()) ||
+                                track.album.name.toLowerCase().includes(word.toLowerCase())
+                            );
+                        });
 
-                    // Utiliza el token de acceso para buscar canciones en Spotify
-                    fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(searchText)}&type=track`, {
-                        headers: {
-                            'Authorization': 'Bearer ' + accessToken
-                        }
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Verifica si se encontraron resultados de canciones
-                        if (data.tracks && data.tracks.items.length > 0) {
-                            const filteredTracks = data.tracks.items.filter(track => {
-                                // Comprueba si todas las palabras de búsqueda están en el nombre de la canción o el nombre del artista
-                                return searchWords.every(word =>
-                                    track.name.toLowerCase().includes(word.toLowerCase()) ||
-                                    track.artists[0].name.toLowerCase().includes(word.toLowerCase()) ||
-                                    track.album.name.toLowerCase().includes(word.toLowerCase())
-                                );
-                            });
-
-                            resultsContainer.innerHTML = ''; // Limpia resultados anteriores
-                            filteredTracks.forEach(track => {
-                                resultsContainer.innerHTML += `
-                                    <div class="song-container">
-                                        <img src="${track.album.images[0].url}" alt="Portada del Álbum">
-                                        <p>Nombre: ${track.name}</p>
-                                        <p>Artista: ${track.artists[0].name}</p>
-                                        <p>Álbum: ${track.album.name}</p>
-                                        <audio controls>
-                                            <source src="${track.preview_url}" type="audio/mpeg">
-                                            Tu navegador no soporta la reproducción de audio.
-                                        </audio>
-                                    </div>
-                                `;
-                            });
-                        } else if (searchInput.value = " ") {
-                            window.location.href="index.html"
-                        } else {
-                          resultsContainer.innerHTML = '<p>No se encontraron resultados para esta canción/artista.</p>';  
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error al buscar la canción en Spotify:', error);
-                    });
+                        resultsContainer.innerHTML = ''; // Limpia resultados anteriores
+                        filteredTracks.forEach(track => {
+                            resultsContainer.innerHTML += `
+                                <div class="song-container">
+                                    <img src="${track.album.images[0].url}" alt="Portada del Álbum">
+                                    <p><u>Nombre</u>: ${track.name}</p>
+                                    <p><u>Artista</u>: ${track.artists[0].name}</p>
+                                    <p><u>Álbum</u>: ${track.album.name}</p>
+                                    <audio controls>
+                                        <source src="${track.preview_url}" type="audio/mpeg">
+                                        Tu navegador no soporta la reproducción de audio.
+                                    </audio>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        resultsContainer.innerHTML = '<p>No se encontraron resultados para esta canción/artista.</p>';
+                    }
+                    limpiar.style.display = 'block';
+                    resultsContainer.style.display = 'block';
+                    resultsContainer.style.display = 'flex';
+                    h1.style.display = 'none';
+                    
                 })
                 .catch(error => {
-                    console.error('Error al obtener el token de acceso de Spotify:', error);
+                    console.error('Error al buscar la canción en Spotify:', error);
                 });
-            }, 500); // Esperar 500ms después de dejar de escribir
-        });
+            })
+            .catch(error => {
+                console.error('Error al obtener el token de acceso de Spotify:', error);
+            });
+        }
+
+        function clearResults() {
+            resultsContainer.style.display = 'none';
+            resultsContainer.innerHTML = '';
+            searchInput.value = '';
+            limpiar.style.display = 'none'
+            h1.style.display = 'block';
+        }
     </script>
     <style>
         body {
@@ -105,25 +124,39 @@
             background-size: cover;
         }
 
-        h1 {
-            text-align: center;
-            color: #333;
-            padding: 10px;
-            border-radius: 10px;
+
+        #input-container {
+            display: flex;
+            align-items: center;
         }
 
         #searchInput {
-            width: 20%;
+            width: 250px;
             margin-bottom: 20px;
             padding: 10px;
             font-size: 16px;
         }
 
+        button {
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+            margin-bottom: 23px;
+            border-radius: 2px;
+        }
+
+        button:hover {
+            background-color: #f88888;
+        }
+        
         #results {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            max-height: 100%;
+            max-height: 70%;
             overflow-y: auto;
             width: 80%;
             border: 1px solid #ccc;
@@ -132,10 +165,11 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
             transition: background-color 0.3s ease-in-out;
+            
         }
 
         .song-container {
-            width: calc(25% - 20px);
+            width: calc(30% - 20px);
             border: 1px solid #ccc;
             padding: 10px;
             margin: 10px;
@@ -151,7 +185,11 @@
             transform: translateY(-5px);
         }
 
-        h1{
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 7px;
+            border-radius: 2px;
             background-color: rgba(255, 255, 255, 0.721);
         }
 
@@ -176,8 +214,24 @@
         audio {
             width: 100%;
         }
-        input{
+
+        input {
             text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Estilos para pantallas con un ancho máximo de 768px (tamaño de dispositivos móviles) */
+            body {
+                background-size: cover;
+            }
+
+            #searchInput {
+                width: 80%;
+            }
+
+            .song-container {
+                width: calc(50% - 20px);
+            }
         }
     </style>
 </body>
