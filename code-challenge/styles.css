@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #009dfffd;
+}
+
+form{
+    background-color: rgba(255, 255, 255, 0.625);
+    padding: 30PX;
+    border-radius: 5px;
+}
+
+h2{
+    background-color: rgba(255, 255, 255, 0.666);
+    border-radius: 3px;
+}
+
+h3{
+    background-color: rgba(255, 255, 255, 0.666);
+    border-radius: 3px;
+}
+
+label[for="fechaNacimiento"]{
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="submit"]{
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="date"]{
+    padding: 10px;
+}
+
+input[type="submit"],
+input[type="button"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    width: 272px;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+button[type="clean"]{
+    padding: 5px 50px;
+    margin-top: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+}
+
+button[type="clean"]:hover{
+    padding: 5px 50px;
+    margin-top: 20px;
+    background-color: red;
+    color: white;
+    border-color: white;
+}
+
+#button{
+    align-items: center;
+}
+
+#registroForm{
+    text-align: center;
+}
+
+#resultados{
+    background-color: rgba(255, 255, 255, 0.625);
+    padding: 30px;
+    margin-left: 30px;
+    text-align: center;
+    display: none;
+    border-radius: 5px;
+}
+
+
