@@ -19,7 +19,6 @@ function mostrarAPI(){
 window.location.href = 'API.html'
 }
 
-
 function searchMusic() {
     const searchText = searchInput.value.toLowerCase();
     
