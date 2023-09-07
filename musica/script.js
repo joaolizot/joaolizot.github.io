@@ -2,6 +2,9 @@ const searchInput = document.getElementById('searchInput');
 const resultsContainer = document.getElementById('results');
 const buscar = document.getElementById('buscar');
 const limpiar = document.getElementById('limpiar');
+const contenedorAPI = document.getElementById("input-container");
+const mostrarAPIbttn = document.getElementById('mostrarAPI');
+const ocultarAPIbttn = document.getElementById('ocultarAPI');
 let timeout;
 searchInput.focus();
 
@@ -10,6 +13,12 @@ resultsContainer.style.display = 'none';
 
 const clientId = '84dc6ab9a90e4e669efa5b8e94642f22';
 const clientSecret = 'baabd3f4c07645b1938bc7850f04a418';
+
+
+function mostrarAPI(){
+window.location.href = 'API.html'
+}
+
 
 function searchMusic() {
     const searchText = searchInput.value.toLowerCase();

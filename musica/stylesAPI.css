@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-image: url('viniloo.jpg');
+}
+
+
+#input-container {
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    width: 450px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 30px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#buscar {
+    padding: 10px 30px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 30px;
+}
+#limpiar {
+    padding: 10px 30px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+#buscar:hover,
+#limpiar:hover {
+    background-color: #f88888;
+}
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: 70%;
+    overflow-y: auto;
+    width: 80%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.song-container {
+    width: calc(25% - 20px);
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    box-sizing: border-box
+}
+
+.song-container:hover {
+    transform: translateY(-5px);
+}
+
+
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    margin: 5px 0;
+    color: #777;
+}
+
+img {
+    width: calc(100% - 20px);
+    display: block;
+    margin: 20px auto;
+}
+
+img:hover{
+    transform: translateY(-5px);
+}
+
+audio {
+    width: 100%;
+}
+
+input {
+    text-align: center;
+}
+a{
+    color: rgb(0, 60, 255);
+}
+
+
