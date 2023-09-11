@@ -46,7 +46,12 @@ document.getElementById('registroForm').addEventListener("submit", function(even
 });
 
 function limpiarForm() {
+    const resultados = document.getElementById('resultados');
     document.getElementById("nombre").value = "";
     document.getElementById("apellido").value = "";
     document.getElementById("fechaNacimiento").value = "";
+}
+
+function limpiarResultado(){
+    resultados.style.display = 'none';
 }
