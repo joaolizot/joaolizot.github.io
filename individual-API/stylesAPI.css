@@ -17,10 +17,9 @@ body {
 }
 
 #searchInput {
-    width: 450px;
+    width: 630px;
     margin-bottom: 20px;
-    padding: 10px;
-    font-size: 30px;
+    font-size: 45px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
