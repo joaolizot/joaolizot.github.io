@@ -8,7 +8,7 @@
 </head>
 <body id="bodyAPI">
     <div id="input-container">
-        <input type="text" class="form-control" id="searchInput" placeholder="Buscar canción, artista o álbum" onkeydown="if (event.key === 'Enter') searchMusic()">
+        <input type="text" class="form-control" id="searchInput" autocomplete="off" placeholder="Buscar canción, artista o álbum" onkeydown="if (event.key === 'Enter') searchMusic()">
         <div id="botones" style="display: flex; justify-content: space-between; align-items: center;">
             <button id="buscar" onclick="searchMusic()">Buscar</button>
             <button id="limpiar" onclick="clearResults()">Limpiar</button>
