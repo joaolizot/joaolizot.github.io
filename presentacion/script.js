@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         apiDiv.innerHTML = ''; // Limpiamos el contenido actual del div
 
         // Generar 10 imágenes al azar desde la API de Lorem Picsum
-        for (var i = 0; i < 14; i++) {
+        for (var i = 0; i < 12; i++) {
             var image = document.createElement("img");
             image.src = "https://picsum.photos/200/200/?random=" + Math.random();
             apiDiv.appendChild(image);

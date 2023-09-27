@@ -57,8 +57,13 @@ form{
 
 #carouselExampleIndicators{
     margin: 30px auto;
-    width: 70%;
+    width: 50% !important;
     border-radius: 10px;
+}
+
+#API{
+    margin: 0 auto;
+    width: 60% !important;
 }
 
 #enlaces a{
