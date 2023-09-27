@@ -59,36 +59,9 @@ form{
 }
 
 #carouselExampleIndicators{
-    margin: 0 auto;
+    margin: 10px auto;
     width: 50% !important;
     border-radius: 10px;
-}
-
-#API{
-    margin: 0 auto;
-    width: 60% !important;
-}
-
-.div-arriba-img{
-    width: 100%;
-    height: 100px;
-}
-
-.card {
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.325) !important;
-}
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-#aIMG{
-    margin: 30px auto;
 }
 
 #enlaces a{
