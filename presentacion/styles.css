@@ -1,5 +1,8 @@
 body{
     background: linear-gradient(90deg, rgba(213,69,255,1) 0%, rgba(0,255,141,1) 100%);
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Opcional: fija la imagen en su lugar */
 }
 
 #nav {
@@ -56,7 +59,7 @@ form{
 }
 
 #carouselExampleIndicators{
-    margin: 30px auto;
+    margin: 0 auto;
     width: 50% !important;
     border-radius: 10px;
 }
@@ -66,16 +69,32 @@ form{
     width: 60% !important;
 }
 
+.div-arriba-img{
+    width: 100%;
+    height: 100px;
+}
+
+.card {
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.325) !important;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#aIMG{
+    margin: 30px auto;
+}
+
 #enlaces a{
     padding: 1%;
 }
 
-#agradecimieto{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh; /* 100% de la altura de la ventana */
-}
 
 a{
     color: rgb(247, 247, 247) !important;
