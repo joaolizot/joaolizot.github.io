@@ -1,6 +1,12 @@
-document.getElementById('enviarBoton').addEventListener('D', function (event) {
+addEventListener('submit', function () {
+    // Previene el envío normal del formulario
+
     // Limpia los valores de los campos del formulario
-    document.getElementById('nombre').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('mensaje').value = '';
+    setTimeout(function () {
+        document.getElementById('nombre').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('mensaje').value = '';
+    }, 1);
+
 });
+
