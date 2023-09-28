@@ -54,15 +54,20 @@ h2{
 p{
     color: rgb(255, 255, 255);
     background-color: rgba(240, 248, 255, 0);
-    border-radius: 1px;
+    border-radius: 10px;
     border: solid 1px;
     border-color: black;
     width: 70%;
     margin: 0 auto;
     font-size: 170%;
-    padding: 5px;
+    padding: 5px 10px;
 } 
-
+.p-carrusel{
+    border: none !important;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.273);
+    width: 300px;
+}
 hr{
     width: 70% !important;
     margin: 100px auto !important;
@@ -75,7 +80,7 @@ form{
     border-radius: 10px;
     border: solid 2.5px;
     border-color: rgb(0, 0, 0);
-    padding: 20px 10px;
+    padding: 15px 10px 30px 10px;
     width: 300px;
 }
 

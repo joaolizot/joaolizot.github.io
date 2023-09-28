@@ -10,3 +10,13 @@ addEventListener('submit', function () {
 
 });
 
+function dirigirSoundCloud(){
+    window.location.href = "https://soundcloud.com/premmm"
+}
+
+function dirigirInstagram(){
+    window.location.href = "https://www.instagram.com/premdjk/"
+}
+function dirigirWhatsapp(){
+    window.location.href = "https://wa.me/59892093991"
+}
