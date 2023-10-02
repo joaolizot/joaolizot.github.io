@@ -1,0 +1,36 @@
+#miFormulario {
+    margin: 0 auto;
+    padding: 20px;
+    width: 300px !important;
+    border: 2px solid !important;
+    border-radius: 2px;
+    border-color: black !important;
+    background-color: rgba(0, 0, 0, 0.116);
+
+}
+
+#productos-container {
+    margin: 0 auto;
+    text-align: left;
+    max-width: 400px;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+#factura{
+    padding: 10px;
+    border-radius: 5px;
+    margin: 50px auto;
+    text-align: left;
+    max-width: 350px;
+    background-color: rgba(128, 127, 127, 0.071);
+
+}
+
+@media screen and(max-width: 768px) {
+    /*Estilo para tablets*/
+}
+
+@media screen and(max-width: 480px) {
+    /*Estilo para moviles*/
+}
