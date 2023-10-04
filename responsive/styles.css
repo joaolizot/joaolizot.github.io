@@ -1,0 +1,92 @@
+
+body, html {
+    font-family: Arial, sans-serif; /* Tipo de fuente predeterminado */
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+}
+.navbar-brand{
+    color: white !important;
+    margin-right: 70px;
+    display: block;}
+.container-fluid{
+    display: block !important;
+}
+.navbar-toggler{
+    float: right;
+}
+.nav-link.active{
+    color: white !important;
+}
+.nav-link{
+    color: rgb(190, 190, 190) !important;
+    margin-right: 100px;
+}
+.btn{
+    color: rgb(0, 0, 0) !important;
+}
+.btn:hover{
+    color: rgb(166, 166, 166) !important;
+}
+
+h3{
+    margin-top: 50px;
+}
+
+.bg-light{
+    height: 90% ;
+}
+
+.border{
+    border-radius: 5px;
+    border: 2px solid rgb(238, 238, 238) !important;
+}
+
+.row>*{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* Oculta el nuevo enlace en pantallas grandes (lg) y superiores */
+@media (min-width: 992px) {
+    .nuevo-enlace {
+        display: none;
+    }
+ul.navbar-nav.mb-2.mb-lg-0.order-lg-0{
+        width: 10%;
+    }
+div#navbarSupportedContent.navbar-collapse.collapse{
+        width: 79%;
+        float: right;
+    }
+    .col-md-9{
+        float: right;
+    }
+
+}
+
+
+/* Muestra el nuevo enlace en pantallas medianas (md) y más pequeñas */
+@media (max-width: 991px) {
+    .nuevo-enlace {
+        display: block;
+    }
+    #navbarSupportedContent{
+        margin-top: 10px;
+    }
+    .bg-secondary{
+        width: 101%;
+    }
+    .carousel-text{
+        display: none;
+    }
+    
+    h3{
+        display: none;
+    }
+    .opciones{
+        display: none;
+    }
+    .row{
+        display: flex;
+    }
+}
