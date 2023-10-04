@@ -31,6 +31,12 @@ body, html {
 h3{
     margin-top: 50px;
 }
+a{
+    color: rgb(71, 71, 71);
+}
+nav{
+    margin-bottom: 10px;
+}
 
 .bg-light{
     height: 90% ;
