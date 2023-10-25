@@ -1,0 +1,42 @@
+.bg-body-secondary{
+    background-color: rgb(254, 246, 137) !important;
+}
+.offcanvas{
+    background-color: rgb(254, 246, 137) !important;
+    color: rgb(0, 0, 0) !important;
+    height: 200px !important;
+    border-radius: 5px;
+}
+.navbar-brand{
+    color: rgb(0, 0, 0) !important;
+}
+.nav-link{
+    color: rgb(123, 123, 123) !important;
+}
+.nav-link.active{
+    color: rgb(0, 0, 0) !important;
+}
+.carousel{
+    margin: 0 auto;
+    width: 95%;
+}
+img{
+    border-radius: 5px;
+}
+.redes{
+    align-items: center;
+}
+a.social-icon{
+    color: rgb(0, 0, 0) !important;
+    display: inline-block;
+    margin: auto 20px;
+}
+a.social-icon:hover{
+    color: rgb(212, 198, 0) !important;
+}
+a.social-icon{
+    text-decoration: none;
+}
+.text-yellow{
+    background-color: rgb(254, 246, 137) !important;
+}
