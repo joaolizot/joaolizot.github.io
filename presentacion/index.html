@@ -29,13 +29,13 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link text-center" href="#acerca-de-mi">Acerca de mí</a>
+                                <a class="nav-link text-center" href="#acercaDeMi">Acerca de mí</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-center" href="#proyectos">Proyectos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-center" href="#contactame">Contáctame</a>
+                                <a class="nav-link text-center" href="#contacto">Contáctame</a>
                             </li>
                         </ul>
                     </div>
@@ -45,11 +45,11 @@
         <div class="vh-50"></div>
             <h1 style="color: rgb(0, 0, 0); font-size: 50px;" class="text-center">Bienvenido a mi sitio</h1>
         <div class="vh-100">
-            <center><a class="flechas" href="#acerca-de-mi">↓↓↓</a></center>
+            <center><a class="flechas" href="#acercaDeMi">↓↓↓</a></center>
         </div>
 
                     <hr>
-                    <h2  style="color: rgb(0, 0, 0); font-size: 40px; background-color: rgba(255, 255, 255, 0.836);" class="text-center mb-3" id="acerca-de-mi">Acerca de mí</h2>  
+                    <h2  style="color: rgb(0, 0, 0); font-size: 40px; background-color: rgba(255, 255, 255, 0.836);" class="text-center mb-3" id="acercaDeMi">Acerca de mí</h2>  
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">                             
@@ -150,24 +150,24 @@
 
 
             <hr>
-            <h2 style="color: rgb(0, 0, 0); font-size: 40px; background-color: rgba(239, 239, 239, 0.836);" class=" mb-5 text-center">Contáctame</h2>
+            <h2 style="color: rgb(0, 0, 0); font-size: 40px; background-color: rgba(239, 239, 239, 0.836);" id="contacto" class=" mb-5 text-center">Contáctame</h2>
             <form id="miFormulario" class="text-center" action="https://formspree.io/f/xjvqanjw" method="POST">
                 <!-- Tus campos de formulario aquí -->
                 <label for="email"> Correo electrónico: </label><br>
-                <input type="email" id="email" name="email" placeholder="ejemplo@email.com" required><br>
+                <input class="mb-4" type="email" id="email" name="email" placeholder="ejemplo@email.com" required><br>
 
                 <label for="asunto"> Asunto: </label><br>
-                <input type="text" id="asunto" name="asunto" placeholder="Ej: Solicitud de Información" required><br>
+                <input class="mb-4" type="text" id="asunto" name="asunto" placeholder="Ej: Solicitud de Información" required><br>
             
                 <label for="mensaje"> Mensaje: </label><br>
-                <textarea id="mensaje" name="mensaje" placeholder="Ej: hola como estas? me gustaría saber más sobre tus proyectos" required></textarea><br>
+                <textarea class="mb-4" id="mensaje" name="mensaje" placeholder="Ej: hola como estas? me gustaría saber más sobre tus proyectos" required></textarea><br>
             
                 <button class="btn btn-light" type="submit" value="Enviar" id="enviarBoton"> Enviar</button>
             </form>
 
 
-            <footer id="contacto" class="text-center mb-2">
-                <img id="contactame" class="img-contacto" onclick="dirigirSoundCloud()" src="img/soundcloud.png"></img>
+            <footer class="text-center mt-5 ">
+                <img class="img-contacto" onclick="dirigirSoundCloud()" src="img/soundcloud.png"></img>
                 <img class="img-contacto" onclick="dirigirWhatsapp()" src="img/whatsapp.png"></img>
                 <img class="img-contacto" onclick="dirigirInstagram()" src="img/instagram.png"></img>
             </footer>

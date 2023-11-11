@@ -1,3 +1,4 @@
+
 .space-background {
     position: fixed;
     top: 0;
@@ -149,7 +150,7 @@ a.link:hover{
 
 img.img-contacto{
     width: 5%;
-    margin: 90px 5% 0 5%;
+    margin: 0 5% 0 5%;
     padding-bottom: 50px;
     cursor: pointer;
 }
@@ -182,9 +183,6 @@ img.imagen-perfil {
     /* Pantallas grandes (lg) */
     img.img-contacto{
         width: 70px;
-        margin: 90px 5% 0 5%;
-        padding-bottom: 50px;
-        cursor: pointer;
     }
     #carouselExampleIndicators{
         margin: 10px auto;
