@@ -36,31 +36,22 @@ height: 40vh;
 }
 
 h1{
-    font-size: 300% !important;
-    color: rgb(255, 255, 255) !important;
-    background-color: rgba(255, 255, 255, 0.308);
-    width: 480px !important;
-    margin: 0 auto;
-    border-radius: 5px;
+    color: rgb(255, 255, 255) ;
+    background-color: rgba(0, 0, 0, 0.308);
 }
 
 h2{
-    margin: 0 auto;
-    color: rgb(255, 255, 255) !important;
-    background-color: rgba(240, 248, 255, 0);
-    width: 200px;
+    color: rgb(255, 255, 255) ;
 }
 
 p{
     color: rgb(255, 255, 255);
-    background-color: rgba(240, 248, 255, 0);
+    background-color: rgba(125, 125, 125, 0.308);
     border-radius: 10px;
     border: solid 1px;
     border-color: black;
-    width: 70%;
     margin: 0 auto;
     font-size: 170%;
-    padding: 5px 10px;
 } 
 .p-carrusel{
     border: none !important;
@@ -69,17 +60,13 @@ p{
     width: 300px;
 }
 hr{
-    width: 70% !important;
-    margin: 100px auto !important;
-    border-width: 5px !important; /* Cambia el grosor a 2 píxeles */
-    border-color: #ae00ffc9 !important; /* Cambia el color del borde si es necesario */
+    margin: 30px auto !important;
+    color: transparent !important;
 }
 
 form{
     margin: 0 auto ;
     border-radius: 10px;
-    border: solid 2.5px;
-    border-color: rgb(0, 0, 0);
     padding: 15px 10px 30px 10px;
     width: 300px;
 }
@@ -100,28 +87,39 @@ label{
     margin: 5px;
 }
 
-#carouselExampleIndicators{
-    margin: 10px auto;
-    width: 65% !important;
-    border-radius: 10px;
+a.flechas {
+    color: white;
+    font-size: 150px !important; /* Ajusta el tamaño del texto según tu preferencia */
+    text-decoration: none; /* Elimina el subrayado */
+    display: inline-block; /* Permite animaciones en línea */
+    animation: moveUpDown 1s infinite alternate; /* Agrega la animación */
 }
 
+@keyframes moveUpDown {
+    from {
+        transform: translateY(-10px); /* Mueve hacia arriba 5px desde la posición original */
+    }
+    to {
+        transform: translateY(10px); /* Mueve hacia abajo 5px desde la posición original */
+    }
+}
+o
 #enlaces a{
     padding: 1%;
 }
 
 
-a{
+a.link{
     color: rgb(247, 247, 247) !important;
 }
 
-a:hover{
+a.link:hover{
     color: rgb(0, 0, 0) !important;
 }
 
 
 img.img-contacto{
-    width: 8%;
+    width: 5%;
     margin: 90px 5% 0 5%;
     padding-bottom: 50px;
     cursor: pointer;
@@ -140,4 +138,53 @@ img.img-contacto:hover{
 .btn-light:hover{
     background-color: rgba(0, 0, 0, 0.408) !important;
     color: white !important;
+}
+
+img.imagen-perfil {
+    width: 200px;
+    height: 200px; /* Establecer la altura igual al ancho para hacerla cuadrada */
+    border-radius: 50%; /* Hacer un borde redondeado para lograr una apariencia circular */
+    object-fit: cover; /* Controlar cómo la imagen se ajusta al contenedor */
+    margin-bottom: 15px;
+}
+
+
+@media (min-width: 992px) {
+    /* Pantallas grandes (lg) */
+    img.img-contacto{
+        width: 70px;
+        margin: 90px 5% 0 5%;
+        padding-bottom: 50px;
+        cursor: pointer;
+    }
+    #carouselExampleIndicators{
+        margin: 10px auto;
+        width: 70% !important;
+        border-radius: 10px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Pantallas medianas (md) */
+    img.img-contacto{
+        width: 50px;
+    }
+    #carouselExampleIndicators{
+        margin: 10px auto;
+        width: 70% !important;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Pantallas pequeñas (sm) */
+    img.img-contacto{
+        width: 50px;
+    }
+    #carouselExampleIndicators{
+        margin: 10px auto;
+        width: 100% !important;
+        border-radius: 10px;
+    }
 }
