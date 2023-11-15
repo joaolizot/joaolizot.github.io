@@ -6,7 +6,7 @@ form{
     padding: 30px;
     margin: 250px auto;
     width: 255px;
-    height: 190px;
+    height: 195px;
     border-radius: 5px;
     border: 2px solid rgb(174, 255, 139);
 }
@@ -34,7 +34,6 @@ button:hover{
 }
 p{
     color: white;
-    margin-left: 10px;
 }
 a{
     color: rgb(174, 255, 139);
